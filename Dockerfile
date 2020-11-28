@@ -5,4 +5,5 @@ RUN  . /etc/os-release; \
         apt-get update; \
         apt-get install -y --no-install-recommends ffmpeg; \
         apt-get install -y --target-release $VERSION_CODENAME-backports --no-install-recommends streamlink; \
-        apt-get purge -y --auto-remove; apt-get clean; rm -rf /var/lib/apt/lists/*
+        apt-get purge -y --auto-remove; apt-get clean; rm -rf /var/lib/apt/lists/*; \
+        streamlink --version
