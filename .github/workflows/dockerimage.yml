@@ -47,7 +47,8 @@ jobs:
           docker tag $IMAGE_ID quay.io/$IMAGE_ID:$VERSION
           docker push quay.io/$IMAGE_ID:$VERSION
 
-      - uses: 8398a7/action-slack@v3
+      - name: Notify Slack
+        uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
           fields: repo,message,commit,author,action,eventName,ref,workflow,job,took # selectable (default: repo,message)
